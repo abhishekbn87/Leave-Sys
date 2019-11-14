@@ -1,0 +1,48 @@
+<div class="container align-middle">
+    <form action="/action_page.php" style="font-weight: bold;color: white">
+        <div class="form-group">
+            <label for="from" style="color: white;font-weight: bold;">From</label>
+            <br>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="width:95%">
+            <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+        <div class="form-group">
+            <label for="to">TO:</label>
+            <br>
+            <input matInput [matDatepicker]="picker2" placeholder="Choose a date" style="width: 95%">
+            <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </div>
+        <div class="form-group">
+            <label for="to">Number of Days:</label>
+            <br>
+            <input matInput placeholder="Enter the number of days" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason:</label>
+            <input type="text" class="form-control" id="reason" required>
+        </div>
+        <div class="form-group">
+            <label for="to">Contact Address:</label>
+            <input type="address" class="form-control" id="pwd" required>
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type Of Leave: </label>
+            <select id="type" name="type" class="form-control">
+        <option disabled selected value>--Select A Leave</option>
+        <option>Special Casual Leave</option>
+        <option>Earned Leave</option>
+        <option>Maternity Leave</option>
+        <option>Casual Leave</option>
+        <option>Committed Leave</option>
+        <option>Restricted Holiday</option>
+    </select>
+        </div>
+        <button mat-button style="background-color: green; color:white" (click)="success()">Submit</button>
+
+    </form>
+</div>
+
+<br style="height:100%">

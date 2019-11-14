@@ -1,0 +1,10 @@
+nav {
+    position: flex;
+    top: 0;
+    /* left: 300px; */
+    width: 100%
+}
+
+nav>li {
+    padding-left: 50px
+}

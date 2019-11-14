@@ -1,0 +1,15 @@
+button {
+    width: 50%
+}
+
+body {
+    background-color: yellow;
+    opacity: 90%
+}
+
+
+/* @media {
+    .container {
+        height: 1000px;
+    }
+} */

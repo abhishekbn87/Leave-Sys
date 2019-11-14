@@ -3,16 +3,46 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
+import {FormsModule} from '@angular/forms';
+import {HomeComponent } from './home/home.component';
+import { NavigationComponent } from './navigation/navigation.component'
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { ApplyComponent } from './apply/apply.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatNativeDateModule} from '@angular/material';
+import {MatInputModule} from '@angular/material';
+import { LeaveDetailsComponent } from './leave-details/leave-details.component';
+import {MatTableModule} from '@angular/material/table';
+import {LecturerDetailsComponent} from './lecturer-details/lecturer-details.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    NavigationComponent,
+    ApplyComponent,
+    LeaveDetailsComponent,
+    LecturerDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [AngularFireAuth,AngularFireAuthGuard,MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

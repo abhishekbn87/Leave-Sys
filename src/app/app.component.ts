@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'leave-sys';
+  constructor(public af:AngularFireAuth,public router:Router) {}
+  
+  logOut()
+  {
+    
+    this.af.auth.signOut();
+    this.af.auth.onAuthStateChanged(user=>{if(!user){window.alert("You have signed out");this.router.navigateByUrl("/login")}});
+
+  }
+
+
 }
