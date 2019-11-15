@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material';
 import { LeaveDetailsComponent } from './leave-details/leave-details.component';
 import {MatTableModule} from '@angular/material/table';
 import {LecturerDetailsComponent} from './lecturer-details/lecturer-details.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import {LecturerDetailsComponent} from './lecturer-details/lecturer-details.comp
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [AngularFireAuth,AngularFireAuthGuard,MatDatepickerModule],
   bootstrap: [AppComponent]

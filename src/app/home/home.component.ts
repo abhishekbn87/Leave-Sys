@@ -21,4 +21,7 @@ export class HomeComponent implements OnInit {
   {
     this.router.navigateByUrl("/lvdtls")
   }
+  facDtls(){
+    this.router.navigateByUrl("/lcdtls")
+  }
 }
