@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+//import { userInfo } from 'os';
+import { AngularFireAuth } from '@angular/fire/auth';
+//import { getMaxListeners } from 'cluster';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(public router:Router) { }
+  hod = false;
+  constructor(private af: AngularFireAuth, public router:Router) { }
 
   ngOnInit() {
-    
-  }
+    this.af.user.subscribe(data=> {if(data){
+      if(data.email == "anandmathad446@gmail.com")
+      {
+        this.hod = true;
+      }
+    }});
+    }
+  
   applyLeave()
   {
       this.router.navigateByUrl("/apply")
@@ -23,5 +32,8 @@ export class HomeComponent implements OnInit {
   }
   facDtls(){
     this.router.navigateByUrl("/lcdtls")
+  }
+  lmgmt(){
+    this.router.navigateByUrl("/lmdtls")
   }
 }

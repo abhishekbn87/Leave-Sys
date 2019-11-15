@@ -21,6 +21,7 @@ import { LeaveDetailsComponent } from './leave-details/leave-details.component';
 import {MatTableModule} from '@angular/material/table';
 import {LecturerDetailsComponent} from './lecturer-details/lecturer-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HodComponent } from './hod/hod.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavigationComponent,
     ApplyComponent,
     LeaveDetailsComponent,
-    LecturerDetailsComponent
+    LecturerDetailsComponent,
+    HodComponent
   ],
   imports: [
     BrowserModule,
