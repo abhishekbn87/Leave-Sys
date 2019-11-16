@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.af.user.subscribe(data=> {if(data){
-      if(data.email == "anandmathad446@gmail.com")
+      if(data.email == "asha.masthi@gmail.com")
       {
         this.hod = true;
       }

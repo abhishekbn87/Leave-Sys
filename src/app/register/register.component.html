@@ -1,0 +1,84 @@
+<div class="container align-middle">
+    <form action="/action_page.php" style="font-weight: bold;color: white">
+        <div class="form-group">
+            <label for="name" style="color: white;font-weight: bold;">Name</label>
+            <br>
+            <input matInput placeholder="Enter the name" style="width: 95%" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fid" style="color: white;font-weight: bold;">FID</label>
+            <br>
+            <input matInput placeholder="Enter the fid" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="Designation" style="color: white;font-weight: bold;">Designation</label>
+            <br>
+            <input matInput placeholder="Enter the designation" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="name" style="color: white;font-weight: bold;">Name</label>
+            <br>
+            <input matInput placeholder="Enter the name" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="phone" style="color: white;font-weight: bold;">Phone Number</label>
+            <br>
+            <input matInput placeholder="Enter the Phone Number" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="email" style="color: white;font-weight: bold;">Email</label>
+            <br>
+            <input matInput placeholder="Enter the email" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="doj" style="color: white;font-weight: bold;">Date Of Joining</label>
+            <br>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="width:95%">
+            <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+
+        <div class="form-group">
+            <label for="aadhar" style="color: white;font-weight: bold;">Aadhar Number</label>
+            <br>
+            <input matInput placeholder="Enter the aadhar number" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="pan" style="color: white;font-weight: bold;">Pan Number</label>
+            <br>
+            <input matInput placeholder="Enter the pan number" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="doj" style="color: white;font-weight: bold;">Date Of Birth</label>
+            <br>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="width:95%">
+            <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+        <div class="form-group">
+            <label for="address" style="color: white;font-weight: bold;">Address</label>
+            <br>
+            <input matInput placeholder="Enter the address" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="salary" style="color: white;font-weight: bold;">Salary</label>
+            <br>
+            <input matInput placeholder="Enter the salary" style="width: 95%" required>
+        </div>
+        <div class="form-group">
+            <label for="type">Sex: </label>
+            <select id="type" name="type" class="form-control">
+        <option disabled selected value>--Select A Sex</option>
+        <option>Male</option>
+        <option>Female</option>
+        
+    </select>
+        </div>
+
+        <button mat-button style="background-color: green; color:white" (click)="success()">Submit</button>
+
+    </form>
+</div>
+
+<br style="height:100%">

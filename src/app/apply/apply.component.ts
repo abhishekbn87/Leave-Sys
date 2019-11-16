@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Apply} from  '../../app/apply'
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-apply',

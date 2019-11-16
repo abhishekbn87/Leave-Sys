@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, FormControl} from '@angular/forms';
 import {HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component'
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
@@ -22,6 +22,7 @@ import {MatTableModule} from '@angular/material/table';
 import {LecturerDetailsComponent} from './lecturer-details/lecturer-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HodComponent } from './hod/hod.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { HodComponent } from './hod/hod.component';
     ApplyComponent,
     LeaveDetailsComponent,
     LecturerDetailsComponent,
-    HodComponent
+    HodComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,7 @@ import { HodComponent } from './hod/hod.component';
     MatTableModule,
     HttpClientModule
   ],
-  providers: [AngularFireAuth,AngularFireAuthGuard,MatDatepickerModule],
+  providers: [AngularFireAuth,AngularFireAuthGuard,MatDatepickerModule,FormControl],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
