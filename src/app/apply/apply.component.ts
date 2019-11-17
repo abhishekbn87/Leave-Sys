@@ -4,6 +4,7 @@ import {Apply} from  '../../app/apply'
 import { FormBuilder } from '@angular/forms';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-apply',
@@ -18,8 +19,15 @@ export class ApplyComponent implements OnInit {
   caddr:any;
   type1:any;
   url:String;
+  email:any
 
-  constructor(private http:HttpClient,public router:Router) { }
+  constructor(private http:HttpClient,public router:Router,af:AngularFireAuth) { 
+    af.authState.subscribe(user=> {
+      this.email = user.email;
+      console.log(this.email);
+    })
+    
+  }
 
   ngOnInit() {
   }
@@ -60,7 +68,7 @@ export class ApplyComponent implements OnInit {
 
     //this.url = "http://localhost:5000/apply_leave/"+"2"+"/"+date1+"/"+date2+"/"+this.nod+"/"+this.reason+"/"+address
     console.log(this.url);
-    this.http.get("http://localhost:5000/applied/"+"3"+"/"+this.type1+"/"+date1+"/"+date2+"/"+this.nod+"/"+this.reason+"/"+address,{observe:'response'}).subscribe(response=>{
+    this.http.get("http://localhost:5000/applied/"+this.email+"/"+this.type1+"/"+this.nod+"/"+date1+"/"+date2+"/"+this.reason+"/"+address,{observe:'response'}).subscribe(response=>{
       window.alert("Leave applied succesfully");
 
       console.log(response.status);
@@ -68,7 +76,7 @@ export class ApplyComponent implements OnInit {
 
     console.log(this.type1);
     
-    //this.router.navigateByUrl("/home");
+    this.router.navigateByUrl("/home");
   }
 
 }

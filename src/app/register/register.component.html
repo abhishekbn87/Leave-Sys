@@ -3,38 +3,38 @@
         <div class="form-group">
             <label for="name" style="color: white;font-weight: bold;">Name</label>
             <br>
-            <input matInput placeholder="Enter the name" style="width: 95%" required>
+            <input matInput placeholder="Enter the name" style="width: 95%" [(ngModel)]="Name" [ngModelOptions]="{standalone: true}" required>
         </div>
 
         <div class="form-group">
             <label for="fid" style="color: white;font-weight: bold;">FID</label>
             <br>
-            <input matInput placeholder="Enter the fid" style="width: 95%" required>
+            <input matInput placeholder="Enter the fid" style="width: 95%" [(ngModel)]="Fid" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
             <label for="Designation" style="color: white;font-weight: bold;">Designation</label>
             <br>
-            <input matInput placeholder="Enter the designation" style="width: 95%" required>
+            <input matInput placeholder="Enter the designation" style="width: 95%" [(ngModel)]="Desig" [ngModelOptions]="{standalone: true}" required>
         </div>
-        <div class="form-group">
+        <!--<div class="form-group">
             <label for="name" style="color: white;font-weight: bold;">Name</label>
             <br>
             <input matInput placeholder="Enter the name" style="width: 95%" required>
-        </div>
+        </div>-->
         <div class="form-group">
             <label for="phone" style="color: white;font-weight: bold;">Phone Number</label>
             <br>
-            <input matInput placeholder="Enter the Phone Number" style="width: 95%" required>
+            <input matInput placeholder="Enter the Phone Number" style="width: 95%" [(ngModel)]="Ph" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
             <label for="email" style="color: white;font-weight: bold;">Email</label>
             <br>
-            <input matInput placeholder="Enter the email" style="width: 95%" required>
+            <input matInput placeholder="Enter the email" style="width: 95%" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
             <label for="doj" style="color: white;font-weight: bold;">Date Of Joining</label>
             <br>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="width:95%">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="width:95%" [(ngModel)]="doj" [ngModelOptions]="{standalone: true}">
             <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </div>
@@ -42,33 +42,33 @@
         <div class="form-group">
             <label for="aadhar" style="color: white;font-weight: bold;">Aadhar Number</label>
             <br>
-            <input matInput placeholder="Enter the aadhar number" style="width: 95%" required>
+            <input matInput placeholder="Enter the aadhar number" style="width: 95%" [(ngModel)]="aadh" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
             <label for="pan" style="color: white;font-weight: bold;">Pan Number</label>
             <br>
-            <input matInput placeholder="Enter the pan number" style="width: 95%" required>
+            <input matInput placeholder="Enter the pan number" style="width: 95%" [(ngModel)]="pan" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
-            <label for="doj" style="color: white;font-weight: bold;">Date Of Birth</label>
+            <label for="dob" style="color: white;font-weight: bold;">Date Of Birth</label>
             <br>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="width:95%">
-            <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="picker1" placeholder="Choose a date" style="width:95%" [(ngModel)]="dob" [ngModelOptions]="{standalone: true}">
+            <mat-datepicker-toggle matSuffix [for]="picker1" style="color: white"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
         </div>
         <div class="form-group">
             <label for="address" style="color: white;font-weight: bold;">Address</label>
             <br>
-            <input matInput placeholder="Enter the address" style="width: 95%" required>
+            <input matInput placeholder="Enter the address" style="width: 95%" [(ngModel)]="addr" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
             <label for="salary" style="color: white;font-weight: bold;">Salary</label>
             <br>
-            <input matInput placeholder="Enter the salary" style="width: 95%" required>
+            <input matInput placeholder="Enter the salary" style="width: 95%" [(ngModel)]="sal" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group">
             <label for="type">Sex: </label>
-            <select id="type" name="type" class="form-control">
+            <select id="type" name="type" class="form-control" [(ngModel)]="sex">
         <option disabled selected value>--Select A Sex</option>
         <option>Male</option>
         <option>Female</option>

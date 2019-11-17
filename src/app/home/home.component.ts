@@ -36,4 +36,7 @@ export class HomeComponent implements OnInit {
   lmgmt(){
     this.router.navigateByUrl("/lmdtls")
   }
+  regis(){
+    this.router.navigateByUrl("/register")
+  }
 }
