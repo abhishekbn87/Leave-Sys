@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     var mmw1 = tokens[1];
     var yyyy1 = tokens[3];
     var mm1 = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(mmw1) / 3 + 1
-    var date1 = String(dd1).concat('-').concat(String(mm1)).concat('-').concat(String(yyyy1))
+    var date1 = String(yyyy1).concat('-').concat(String(mm1)).concat('-').concat(String(dd1))
     console.log(date1);
 
     var string1:String = String(this.dob)
@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
     var mmw2 = tokens1[1];
     var yyyy2 = tokens1[3];
     var mm2 = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(mmw2) / 3 + 1
-    var date2 = String(dd2).concat('-').concat(String(mm2)).concat('-').concat(String(yyyy2))
+    var date2 = String(yyyy2).concat('-').concat(String(mm2)).concat('-').concat(String(dd2))
     console.log(date2);
 
     this.url = "http://localhost:5000/regs/"+this.Name+"/"+this.Fid+"/"+this.Desig+"/"+this.Ph+"/"+this.email+"/"+date1+"/"+this.aadh+"/"+this.pan+"/"+date2+"/"+address+"/"+this.sal+"/"+this.sex;

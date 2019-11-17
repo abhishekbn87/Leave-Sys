@@ -17,7 +17,7 @@ export class LecturerDetailsComponent {
   faculty: Faculty[];
   dataSource : any;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  displayedColumns: string[] = ['id','name','email','phone','gender','dob','addr'];
+  displayedColumns: string[] = ['slno','name','Fid','Designation','Phone','Email','Sex'];
   constructor( private route: ActivatedRoute,private http:HttpClient, private router: Router) { }
 
   ngOnInit() {

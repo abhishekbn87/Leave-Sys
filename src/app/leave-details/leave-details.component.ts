@@ -1,8 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { emailVerified } from '@angular/fire/auth-guard';
 import { LoginComponent } from '../login/login.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { LeaveD } from 'src/app/leave'
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -33,8 +36,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: 'leave-details.component.html',
 })
 export class LeaveDetailsComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  leave: LeaveD[];
+  dataSource : any;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  displayedColumns: string[] = ['Slno','Lid','nod_applied','nod_remaining'];
+  constructor( private route: ActivatedRoute,private http:HttpClient, private router: Router) { }
+
+  ngOnInit() {
+    this.http.get<LeaveD[]>("http://localhost:5000/leaved").subscribe(data =>{
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
   
   
 
