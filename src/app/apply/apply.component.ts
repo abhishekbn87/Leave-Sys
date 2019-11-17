@@ -48,7 +48,7 @@ export class ApplyComponent implements OnInit {
     var mmw1 = tokens[1];
     var yyyy1 = tokens[3];
     var mm1 = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(mmw1) / 3 + 1
-    var date1 = String(dd1).concat('-').concat(String(mm1)).concat('-').concat(String(yyyy1))
+    var date1 = String(yyyy1).concat('-').concat(String(mm1)).concat('-').concat(String(dd1))
     console.log(date1);
     console.log(dd1);
     console.log(mm1);
@@ -60,7 +60,7 @@ export class ApplyComponent implements OnInit {
     var mmw2 = tokens1[1];
     var yyyy2 = tokens1[3];
     var mm2 = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(mmw2) / 3 + 1
-    var date2 = String(dd2).concat('-').concat(String(mm2)).concat('-').concat(String(yyyy2))
+    var date2 = String(yyyy2).concat('-').concat(String(mm2)).concat('-').concat(String(dd2))
     console.log(date2);
     console.log(dd2);
     console.log(mm2);
@@ -68,7 +68,7 @@ export class ApplyComponent implements OnInit {
 
     //this.url = "http://localhost:5000/apply_leave/"+"2"+"/"+date1+"/"+date2+"/"+this.nod+"/"+this.reason+"/"+address
     console.log(this.url);
-    this.http.get("http://localhost:5000/applied/"+this.email+"/"+this.type1+"/"+this.nod+"/"+date1+"/"+date2+"/"+this.reason+"/"+address,{observe:'response'}).subscribe(response=>{
+    this.http.get("http://localhost:5000/applied/"+this.email+"/"+this.type1+"/"+date1+"/"+date2+"/"+this.reason+"/"+address,{observe:'response'}).subscribe(response=>{
       window.alert("Leave applied succesfully");
 
       console.log(response.status);
