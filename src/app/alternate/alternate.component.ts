@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-alternate',
@@ -6,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alternate.component.css']
 })
 export class AlternateComponent implements OnInit {
+  alter: Number;
+  constructor (private http:HttpClient) {
 
-  constructor() { }
+  }
+  alt = [];
 
   ngOnInit() {
+    this.http.get<Number>("http://localhost:5000/alternate").subscribe(data =>{
+      this.alter = data;
+      for(let i =1;i<=data;i++){
+        this.alt.push(i);
+      }
+    });
+
   }
 
 }

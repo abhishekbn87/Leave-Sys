@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-apply',
@@ -68,10 +69,15 @@ export class ApplyComponent implements OnInit {
 
     //this.url = "http://localhost:5000/apply_leave/"+"2"+"/"+date1+"/"+date2+"/"+this.nod+"/"+this.reason+"/"+address
     console.log(this.url);
-    this.http.get("http://localhost:5000/applied/"+this.email+"/"+this.type1+"/"+date1+"/"+date2+"/"+this.reason+"/"+address,{observe:'response'}).subscribe(response=>{
-      window.alert("Leave applied succesfully");
-
-      console.log(response.status);
+    this.http.get<Boolean>("http://localhost:5000/applied/"+this.email+"/"+this.type1+"/"+date1+"/"+date2+"/"+this.reason+"/"+address).subscribe(response=>{
+      console.log(response);
+      if(response){
+        window.alert("Leave applied succesfully");
+      }
+      else{
+        window.alert("So many leaves not available");
+        this.router.navigateByUrl("/apply");
+      }
     });
 
     console.log(this.type1);
