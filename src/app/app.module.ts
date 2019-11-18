@@ -23,6 +23,7 @@ import {LecturerDetailsComponent} from './lecturer-details/lecturer-details.comp
 import { HttpClientModule } from '@angular/common/http';
 import { HodComponent } from './hod/hod.component';
 import { RegisterComponent } from './register/register.component';
+import { AlternateComponent } from './alternate/alternate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { RegisterComponent } from './register/register.component';
     LeaveDetailsComponent,
     LecturerDetailsComponent,
     HodComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlternateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div class="container align-middle">
+    <form action="/action_page.php" style="font-weight: bold;color: white">
+        <div class="form-group">
+            <label for="from" style="color: white;font-weight: bold;">From</label>
+            <br>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="from1" [ngModelOptions]="{standalone: true}" style="width:95%">
+            <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+    </form>
+</div>
