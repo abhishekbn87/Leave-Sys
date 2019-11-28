@@ -39,7 +39,4 @@ export class HomeComponent implements OnInit {
   regis(){
     this.router.navigateByUrl("/register")
   }
-  altmgt(){
-    this.router.navigateByUrl("/alternate")
-  }
 }

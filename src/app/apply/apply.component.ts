@@ -82,7 +82,7 @@ export class ApplyComponent implements OnInit {
 
     console.log(this.type1);
     
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl("/alternate")
   }
 
 }

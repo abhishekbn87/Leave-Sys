@@ -1,11 +1,16 @@
 <div class="container align-middle">
     <form action="/action_page.php" style="font-weight: bold;color: white" *ngFor="let alt1 of alt;let index = index;trackBy:trackByIndex;">
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="date1" style="color: white;font-weight: bold;">Leave Date</label>
             <br>
             <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date1[index]" [ngModelOptions]="{standalone: true}" style="width:95%">
             <mat-datepicker-toggle matSuffix [for]="picker" style="color: white"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+        </div> -->
+
+        <div class="form-group">
+            <label for="class">Date</label>
+            <input type="text" class="form-control" id="class" required [(ngModel)]="date1[index]" [ngModelOptions]="{standalone: true}">
         </div>
 
         <div class="form-group">
@@ -19,9 +24,24 @@
         </div>
 
         <div class="form-group">
+            <label for="v">Time of class: </label>
+            <select id="time" name="v" class="form-control" required [(ngModel)]="time[index]">
+                <option class="placeholder" selected disabled value="">Select Time Of Class</option>
+                <option>8:00AM to 9:00AM</option>
+                <option>9:00AM to 10:00AM</option>
+                <option>10:00AM to 11:AM</option>
+                <option>11:30AM to 12:30PM</option>
+                <option>12:30PM to 01:30PM</option>
+                <option>02:00PM to 03:00PM</option>
+                <option>03:00PM to 04:00PM</option>
+                <option>04:00PM to 05:00PM</option>
+            </select>
+        </div>
+        
+        <!-- <div class="form-group">
             <label for="v">Enter The Time Of class::</label>
             <input type="text" class="form-control" id="time" required [(ngModel)]="time[index]" [ngModelOptions]="{standalone: true}">
-        </div>
+        </div> -->
 
         <div class="form-group">
             <label for="sub">Enter The Subject To Be Handled:</label>
@@ -35,7 +55,7 @@
         <option *ngFor = 'let hand of hands' value="{{hand.slno}}">{{ hand.Name }}</option>
         </select>
         </div>
-
+ 
     </form>
     <button mat-button style="background-color: green; color:white" (click)="success()">Submit</button>
 

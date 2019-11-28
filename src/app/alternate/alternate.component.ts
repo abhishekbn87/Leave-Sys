@@ -27,6 +27,12 @@ export class AlternateComponent implements OnInit {
       this.email = user.email;
     })
 
+    //Automatic date addition
+    this.http.get<String[]>("http://localhost:5000/dateadd/"+this.email).subscribe(data =>{
+      this.date1 = data
+      console.log(this.date1);
+      });
+
 
   }
 
@@ -34,6 +40,8 @@ export class AlternateComponent implements OnInit {
     this.http.get<Handle[]>("http://localhost:5000/handle").subscribe(data=>{
       this.hands = data;
     });
+
+
     this.http.get<Number>("http://localhost:5000/alternate/"+this.email).subscribe(data =>{
       this.alter = data;
       for(let i =1;i<=data;i++){
@@ -59,8 +67,12 @@ export class AlternateComponent implements OnInit {
 
     for(let i=0;i<this.alter;i++){
       console.log(i);
-      this.http.get("http://localhost:5000/altinsert/"+this.email+"/"+this.date1[i]+"/"+this.class1[i]+"/"+this.section[i]+"/"+this.time[i]+"/"+this.sub[i]+"/"+this.handel[i],{observe:'response'}).subscribe(response=>console.log(response))
+      this.http.get("http://localhost:5000/altinsert/"+this.email+"/"+this.date1[i]+"/"+this.class1[i]+"/"+this.section[i]+"/"+this.time[i]+"/"+this.sub[i]+"/"+this.handel[i],{observe:'response'}).subscribe(response=>{
+        console.log(response);
+        
+      })
     }
+  window.alert("Alternate Arrangement Made");
   this.router.navigateByUrl("/home")
   }
 
