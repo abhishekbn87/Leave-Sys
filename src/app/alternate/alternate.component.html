@@ -1,4 +1,5 @@
 <div class="container align-middle">
+    <h3>Alternate Arrangement</h3>
     <form action="/action_page.php" style="font-weight: bold;color: white" *ngFor="let alt1 of alt;let index = index;trackBy:trackByIndex;">
         <!-- <div class="form-group">
             <label for="date1" style="color: white;font-weight: bold;">Leave Date</label>
@@ -9,7 +10,7 @@
         </div> -->
 
         <div class="form-group">
-            <label for="class">Date</label>
+            <label for="class">Date{{index+1}}</label>
             <input type="text" class="form-control" id="class" required [(ngModel)]="date1[index]" [ngModelOptions]="{standalone: true}">
         </div>
 

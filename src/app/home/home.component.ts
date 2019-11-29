@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
       if(data.email == "asha.masthi@gmail.com")
       {
         this.hod = true;
+        console.log(this.hod);
       }
     }});
     }
