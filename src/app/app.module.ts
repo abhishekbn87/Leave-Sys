@@ -25,6 +25,7 @@ import { HodComponent } from './hod/hod.component';
 import { RegisterComponent } from './register/register.component';
 import { AlternateComponent } from './alternate/alternate.component';
 import { LeavemgtComponent } from './leavemgt/leavemgt.component';
+import { LvsubdetailsComponent } from './lvsubdetails/lvsubdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { LeavemgtComponent } from './leavemgt/leavemgt.component';
     HodComponent,
     RegisterComponent,
     AlternateComponent,
-    LeavemgtComponent
+    LeavemgtComponent,
+    LvsubdetailsComponent
   ],
   imports: [
     BrowserModule,

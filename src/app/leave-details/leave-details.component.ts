@@ -33,7 +33,8 @@ export class LeaveDetailsComponent {
     });
   }
   selected(row) {
-    
+    console.log(row.lid);
+    this.router.navigateByUrl('/lvsub/'+row.lid);
   }
   
   
