@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HodComponent } from './hod/hod.component';
 import { RegisterComponent } from './register/register.component';
 import { AlternateComponent } from './alternate/alternate.component';
+import { LeavemgtComponent } from './leavemgt/leavemgt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { AlternateComponent } from './alternate/alternate.component';
     LecturerDetailsComponent,
     HodComponent,
     RegisterComponent,
-    AlternateComponent
+    AlternateComponent,
+    LeavemgtComponent
   ],
   imports: [
     BrowserModule,

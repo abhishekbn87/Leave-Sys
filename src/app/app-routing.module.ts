@@ -9,6 +9,7 @@ import { LecturerDetailsComponent } from './lecturer-details/lecturer-details.co
 import { HodComponent } from './hod/hod.component';
 import { RegisterComponent } from './register/register.component';
 import { AlternateComponent } from './alternate/alternate.component';
+import { LeavemgtComponent } from './leavemgt/leavemgt.component';
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['home']);
 
@@ -21,7 +22,9 @@ const routes: Routes = [{path:"login",component:LoginComponent},
                         {path:"lmdtls",component: HodComponent,canActivate:[AngularFireAuthGuard],data: {authGuardPipe:redirectUnauthorizedTo["login"]}},
                         {path: '',redirectTo: '/login', pathMatch: 'full'}, 
                         {path: "register",component:RegisterComponent,canActivate:[AngularFireAuthGuard],data: {authGuardPipe:redirectUnauthorizedTo["/login"]} }, 
-                        {path: "alternate",component:AlternateComponent,canActivate:[AngularFireAuthGuard],data: {authGuardPipe:redirectUnauthorizedTo["/login"]} }
+                        {path: "alternate",component:AlternateComponent,canActivate:[AngularFireAuthGuard],data: {authGuardPipe:redirectUnauthorizedTo["/login"]}},
+                        {path: "ldindi/:Name", component:LeavemgtComponent,canActivate:[AngularFireAuthGuard],data:{authGuardPipe:redirectUnauthorizedTo["/login"]}}
+                      
 ];
 
 @NgModule({

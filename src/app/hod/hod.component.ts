@@ -23,5 +23,9 @@ export class HodComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
   });
 }
+selectrow(row) {
+  console.log(row.Name);
+  this.router.navigateByUrl('/ldindi/'+row.Name);
+}
 
 }

@@ -7,11 +7,11 @@
 
         <!-- Position Column -->
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef style="text-align: center;" > Name </th>
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;" > <h4>Name</h4> </th>
         <td mat-cell *matCellDef="let faculty" style="text-align: center;" > <h4>{{faculty.Name}}</h4> </td>
       </ng-container>
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="width: 100%;" ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectrow(row)" style="width: 100%;cursor: pointer;"  ></tr>
     </table>
 </div>

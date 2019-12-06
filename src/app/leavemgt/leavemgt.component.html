@@ -1,0 +1,35 @@
+<div class="container middle-align">
+    <h3>Leave Details : {{Name}}</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Slno">
+            <th mat-header-cell *matHeaderCellDef> Slno </th>
+            <td mat-cell *matCellDef="let leave"> {{leave.slno}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Lid">
+            <th mat-header-cell *matHeaderCellDef> Lid </th>
+            <td mat-cell *matCellDef="let leave"> {{leave.lid}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="nod_applied">
+            <th mat-header-cell *matHeaderCellDef> No_Of_Days_Applied </th>
+            <td mat-cell *matCellDef="let leave"> {{leave.nod_applied}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="nod_remaining">
+            <th mat-header-cell *matHeaderCellDef> No_Of_Days_Remaining </th>
+            <td mat-cell *matCellDef="let leave"> {{leave.nod_remaining}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)= "selected(row)" style="cursor: pointer;"></tr>
+    </table>
+</div>

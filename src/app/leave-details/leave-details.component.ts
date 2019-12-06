@@ -32,6 +32,9 @@ export class LeaveDetailsComponent {
       this.dataSource.paginator = this.paginator;
     });
   }
+  selected(row) {
+    
+  }
   
   
 
