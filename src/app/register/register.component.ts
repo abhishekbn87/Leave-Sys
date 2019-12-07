@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.url);
 
     this.http.get("http://localhost:5000/regs/"+this.Name+"/"+this.Fid+"/"+this.Desig+"/"+this.Ph+"/"+this.email+"/"+date1+"/"+this.aadh+"/"+this.pan+"/"+date2+"/"+address+"/"+this.sal+"/"+this.sex,{observe:'response'}).subscribe(response=>{
-      window.alert("Registraion successfull");
+      window.alert("Registraion successful");
 
       console.log(response.status);
     });

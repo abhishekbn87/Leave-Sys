@@ -26,6 +26,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlternateComponent } from './alternate/alternate.component';
 import { LeavemgtComponent } from './leavemgt/leavemgt.component';
 import { LvsubdetailsComponent } from './lvsubdetails/lvsubdetails.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { LvsubdetailsComponent } from './lvsubdetails/lvsubdetails.component';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Handle } from './handle';
 import { AngularFireAuth } from '@angular/fire/auth';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./alternate.component.css']
 })
 export class AlternateComponent implements OnInit {
-  alter: Number;
+  alter: any;
   hands:Handle[]=[];
   date1:String[]=[];
   class1:String[]=[];
@@ -22,7 +23,7 @@ export class AlternateComponent implements OnInit {
   handel:Number[]=[];
   alt:Number[] = [];
   email:String;
-  constructor (private http:HttpClient, af:AngularFireAuth,private router:Router) {
+  constructor (private http:HttpClient, af:AngularFireAuth,private router:Router,private _snackBar: MatSnackBar) {
     af.authState.subscribe(user=>{
       this.email = user.email;
     })
@@ -56,6 +57,9 @@ export class AlternateComponent implements OnInit {
   }
 
   success(){
+    this._snackBar.open("Sending Email", "Dismiss", {
+      duration: 10000,
+    });
     console.log(this.email);
     console.log(this.date1);
     console.log(this.class1);
@@ -69,11 +73,15 @@ export class AlternateComponent implements OnInit {
       console.log(i);
       this.http.get("http://localhost:5000/altinsert/"+this.email+"/"+this.date1[i]+"/"+this.class1[i]+"/"+this.section[i]+"/"+this.time[i]+"/"+this.sub[i]+"/"+this.handel[i],{observe:'response'}).subscribe(response=>{
         console.log(response);
+        if(i == this.alter-1) {
+          window.alert("Alternate Arrangement Made");
+          this.router.navigateByUrl("/home")
+        }
         
       })
     }
-  window.alert("Alternate Arrangement Made");
-  this.router.navigateByUrl("/home")
+
   }
+
 
 }
