@@ -40,4 +40,8 @@ export class HomeComponent implements OnInit {
   regis(){
     this.router.navigateByUrl("/register")
   }
+  alt()
+  {
+    this.router.navigateByUrl("/alt")
+  }
 }

@@ -27,6 +27,7 @@ import { AlternateComponent } from './alternate/alternate.component';
 import { LeavemgtComponent } from './leavemgt/leavemgt.component';
 import { LvsubdetailsComponent } from './lvsubdetails/lvsubdetails.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {AltTableComponent } from './alt-table/alt-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     RegisterComponent,
     AlternateComponent,
     LeavemgtComponent,
-    LvsubdetailsComponent
+    LvsubdetailsComponent,
+    AltTableComponent
   ],
   imports: [
     BrowserModule,
